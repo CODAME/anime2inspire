@@ -14,7 +14,7 @@
 
 html {
   font-size: 62.5%;
-  background: radial-gradient(ellipse at center, #F7F6F0 0, #c2ba8c 80%, #b0a66b 100%); }
+  background: radial-gradient(ellipse at center, #9730db 0, #c2ba8c 80%, #b0a66b 100%); }
 
 body {
   font: 300 13px/1.6 'Helvetica Neue', Helvetica, Arial;
@@ -399,6 +399,28 @@ textarea {
 
 .nav ul {
   list-style: none; }
+
+body .stretchToFill {
+  padding: 0px;
+  margin: 0px;
+  width: 100%;
+  height: 100%;
+  background-size: 100% 100%; }
+
+body .stretchedToFit {
+  background: no-repeat center center fixed;
+  background-size: cover;
+  min-width: 100%;
+  min-height: 100%;
+  width: 100%;
+  height: 100%; }
+
+body .originalSize {
+  background-repeat: no-repeat;
+  position: absolute;
+  padding: 0px;
+  min-width: 100%;
+  min-height: 100%; }
 
 @font-face {
   font-family: 'Font-Name';
