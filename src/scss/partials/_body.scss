@@ -1,3 +1,29 @@
-.main {
+body {
+
+  .stretchToFill{
+    padding: 0px;
+    margin: 0px;
+    width: 100vw;
+    height: 100vh;
+    background-size:100% 100%;
+  }
+
+  .stretchedToFit{
+    background: no-repeat center center fixed;
+    background-size: cover;
+    min-width:100vw;
+    min-height:100vh;
+    width: 100%;
+    height: 100%;
+  }
+
+  .originalSize{
+    background-repeat: no-repeat;
+    position:absolute;
+    padding: 0px;
+    min-width:100vw;
+    min-height:100vh;
+  }
+
 
 }

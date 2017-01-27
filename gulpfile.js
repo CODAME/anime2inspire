@@ -9,6 +9,8 @@ var gulp = require('gulp'),
     cssnano = require('gulp-cssnano'),
     sourcemaps = require('gulp-sourcemaps'),
     package = require('./package.json');
+const babel = require('gulp-babel');
+const concat = require('gulp-concat');
 
 
 var banner = [
@@ -37,16 +39,15 @@ gulp.task('css', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('js',function(){
-  gulp.src('src/js/scripts.js')
+gulp.task('js', () => {
+  // scripts are concat alphabetically by file name
+  return gulp.src(['src/js/*.js'])
     .pipe(sourcemaps.init())
     .pipe(jshint('.jshintrc'))
     .pipe(jshint.reporter('default'))
-    .pipe(header(banner, { package : package }))
-    .pipe(gulp.dest('app/assets/js'))
+    .pipe(babel({ presets: ['es2015'] }))
     .pipe(uglify())
-    .pipe(header(banner, { package : package }))
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(concat('scripts.min.js'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest('app/assets/js'))
     .pipe(browserSync.reload({stream:true, once: true}));
