@@ -22,14 +22,33 @@
     './assets/img/pokemon/61c1e2f1e3cbc68731c06940a8cac3586b9bd3a11429e5f89da9810d171380bd_1.gif'
   ];
   function getSemiRandomPokemon(){
-    //if the copy array length is zero, fill her up & shuffle!
-    if(shuffledPokemonGifs.length===0)
-    {
+    if(shuffledPokemonGifs.length===0){
       shuffledPokemonGifs = [].concat(pokemonGifs);
       shuffledPokemonGifs = shuffledPokemonGifs.shuffle();
     }
-    //pop a gif off the shuffled array
     return shuffledPokemonGifs.pop();
+  }
+
+  var shuffledQuotes = [];
+  var quotes = [
+    ['we tend to forget that happiness doesnt come as a result of getting','something we dont have, but of appreciating what we do have'],
+    ['seek freedom and become captive of your desires','seek discipline and find your liberty'],
+    ['it&apos;s not who you are that holds you back,','it&apos;s who you think you&apos;re not'],
+    ['when someone tells me no it doesnt mean i cant','it just means i cant do it with them'],
+    ['worrying does not take away tomorrows troubles','it takes away todays peace'],
+    ['dont wait for the perfect moment','take the moment and make it perfect'],
+    ['dont let people pull you into their storm','pull them into your peace'],
+    ['don&apos;t be afraid to fail','be afraid not to try'],
+    ['if you cannot be positive','then at least be quiet'],
+    ['perfection is not of the world','do your best and forget the rest'],
+    ['heroism is endurance','for one moment more']
+  ];
+  function getSemiRandomQuote(){
+    if(shuffledQuotes.length===0){
+      shuffledQuotes = [].concat(quotes);
+      shuffledQuotes = shuffledQuotes.shuffle();
+    }
+    return shuffledQuotes.pop();
   }
 
 
@@ -66,22 +85,25 @@
 // |__|_|  (____  /__|___|  /  |___  /__|  (____  /__|___|  /____  >
 //       \/     \/        \/       \/           \/        \/     \/
 
-  function assignRandomAnime(){
+  function displayRandomAnime(){
     console.log('anime!');
     document.getElementById('animeLoop').style.backgroundImage='url("'+ getSemiRandomPokemon() +'")';
   }
 
-  function assignRandomQuote(){
-    console.log('wish i had quotes');
+  function displayRandomQuote(){
+    var quoteArray = getSemiRandomQuote();
+    var quoteString = '<p>' + quoteArray[0].replace(/ /g, '&nbsp;') + '<br/>' + quoteArray[1].replace(/ /g, '&nbsp;') +'</p>';
+    console.log(quoteString);
+    document.getElementById('quoteZone').innerHTML = quoteString;
   }
 
   function changeElement(){
     //determine which element to swap
     var targetFlag = getRandomInt(0,1);
     if(targetFlag===0){
-      assignRandomAnime();
+      displayRandomAnime();
     }else{
-      assignRandomQuote();
+      displayRandomQuote();
     }
 
     //reset the timer again

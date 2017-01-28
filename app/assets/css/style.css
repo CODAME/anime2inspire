@@ -415,6 +415,21 @@ body .stretchedToFit {
   width: 100%;
   height: 100%; }
 
+body #quoteZone {
+  position: fixed;
+  top: 0px;
+  /* or whatever top you need */
+  left: 50%;
+  width: 100vw;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%);
+  font-size: 36px;
+  font-family: "Comic Sans MS", "Comic Sans", cursive;
+  color: white;
+  text-align: center;
+  text-shadow: -2px -2px 0 #000000, -2px -1px 0 #000000, -2px 0px 0 #000000, -2px 1px 0 #000000, -2px 2px 0 #000000, -1px -2px 0 #000000, -1px -1px 0 #000000, -1px 0px 0 #000000, -1px 1px 0 #000000, -1px 2px 0 #000000, 0px -2px 0 #000000, 0px -1px 0 #000000, 0px 0px 0 #000000, 0px 1px 0 #000000, 0px 2px 0 #000000, 1px -2px 0 #000000, 1px -1px 0 #000000, 1px 0px 0 #000000, 1px 1px 0 #000000, 1px 2px 0 #000000, 2px -2px 0 #000000, 2px -1px 0 #000000, 2px 0px 0 #000000, 2px 1px 0 #000000, 2px 2px 0 #000000; }
+
 body .originalSize {
   background-repeat: no-repeat;
   position: absolute;

@@ -17,6 +17,23 @@ body {
     height: 100%;
   }
 
+  #quoteZone{
+    position: fixed;
+    top: 0px; /* or whatever top you need */
+    left: 50%;
+    width: 100vw;
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+    transform: translateX(-50%);
+    font-size: 36px;
+    font-family: "Comic Sans MS", "Comic Sans", cursive;
+    color:white;
+    text-align: center;
+    @include stroke(2,#000000);
+  }
+
   .originalSize{
     background-repeat: no-repeat;
     position:absolute;
