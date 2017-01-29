@@ -31,7 +31,7 @@
 
   var shuffledQuotes = [];
   var quotes = [
-    ['we tend to forget that happiness doesnt come as a result of getting','something we dont have, but of appreciating what we do have'],
+    ['we tend to forget that happiness doesnt', 'come as a result of getting something we dont have','but of appreciating what we do have'],
     ['seek freedom and become captive of your desires','seek discipline and find your liberty'],
     ['it&apos;s not who you are that holds you back,','it&apos;s who you think you&apos;re not'],
     ['when someone tells me no it doesnt mean i cant','it just means i cant do it with them'],
@@ -92,7 +92,11 @@
 
   function displayRandomQuote(){
     var quoteArray = getSemiRandomQuote();
-    var quoteString = '<p>' + quoteArray[0].replace(/ /g, '&nbsp;') + '<br/>' + quoteArray[1].replace(/ /g, '&nbsp;') +'</p>';
+    var quoteString = '<p>';
+    quoteArray.forEach( function(s) {
+      quoteString = quoteString + s.replace(/ /g, '&nbsp;') + '<br/>';
+    } );
+    quoteString = quoteString + '</p>'
     console.log(quoteString);
     document.getElementById('quoteZone').innerHTML = quoteString;
   }
